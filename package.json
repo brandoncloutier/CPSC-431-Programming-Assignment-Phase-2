@@ -1,0 +1,24 @@
+{
+  "name": "group-07-hw7",
+  "version": "1.0.0",
+  "description": "To-Do List Application",
+  "homepage": "https://github.com/brandoncloutier/CPSC-431-Programming-Assignment-Phase-2#readme",
+  "bugs": {
+    "url": "https://github.com/brandoncloutier/CPSC-431-Programming-Assignment-Phase-2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandoncloutier/CPSC-431-Programming-Assignment-Phase-2.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --env-file=.env server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1"
+  }
+}

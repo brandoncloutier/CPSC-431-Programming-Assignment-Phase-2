@@ -1,0 +1,90 @@
+@host = http://localhost:3000
+
+###
+# Get all lists
+GET {{host}}/api/lists
+
+###
+# Create a new list
+# @name createList
+POST {{host}}/api/lists
+Content-Type: application/json
+
+{
+  "title": "Groceries"
+}
+
+###
+# Capture the created list id from the previous response
+@listId = {{createList.response.body.$._id}}
+
+###
+# Create a second list
+POST {{host}}/api/lists
+Content-Type: application/json
+
+{
+  "title": "Weekend Chores"
+}
+
+###
+# Add an entry to the list
+# @name addEntry
+POST {{host}}/api/lists/{{listId}}/entries
+Content-Type: application/json
+
+{
+  "text": "Buy milk"
+}
+
+###
+# Capture the entry id (last entry in the returned entries array)
+@entryId = {{addEntry.response.body.$.entries[0].id}}
+
+###
+# Add a second entry
+POST {{host}}/api/lists/{{listId}}/entries
+Content-Type: application/json
+
+{
+  "text": "Buy eggs"
+}
+
+###
+# Add a third entry
+POST {{host}}/api/lists/{{listId}}/entries
+Content-Type: application/json
+
+{
+  "text": "Buy bread"
+}
+
+###
+# Mark first entry as completed
+PATCH {{host}}/api/lists/{{listId}}/entries/{{entryId}}
+Content-Type: application/json
+
+{
+  "status": true
+}
+
+###
+# Mark first entry as not completed
+PATCH {{host}}/api/lists/{{listId}}/entries/{{entryId}}
+Content-Type: application/json
+
+{
+  "status": false
+}
+
+###
+# Delete the first entry
+DELETE {{host}}/api/lists/{{listId}}/entries/{{entryId}}
+
+###
+# Verify the list state after entry mutations
+GET {{host}}/api/lists
+
+###
+# Delete the list
+DELETE {{host}}/api/lists/{{listId}}

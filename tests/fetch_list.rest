@@ -1,0 +1,3 @@
+@host = http://localhost:3000
+
+GET {{host}}/api/lists/69dfdacad9adf1083e6ec02c/
