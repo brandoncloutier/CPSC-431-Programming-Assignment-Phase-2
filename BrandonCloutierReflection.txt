@@ -6,3 +6,4 @@ April 17, 2026
   For this project my responsibilities was to implement the server logic and the database structure. We split the responsibilites into server/db and client.
 Christian, my partner is handling implementing the client logic to consume the API routes. Together we worked on phase 1 to figure out the structure of the app including the system design and database structure.
 
+  During this project we used github to share
