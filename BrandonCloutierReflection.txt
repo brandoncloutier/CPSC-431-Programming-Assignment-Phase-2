@@ -6,4 +6,10 @@ April 17, 2026
   For this project my responsibilities was to implement the server logic and the database structure. We split the responsibilites into server/db and client.
 Christian, my partner is handling implementing the client logic to consume the API routes. Together we worked on phase 1 to figure out the structure of the app including the system design and database structure.
 
-  During this project we used github to share
+  During this project we used github so Christian and I could work on the project simultaniously. Since we were working on differnt components of the application it was easy. 
+We had already established the different endpoints that we would need before we started to work on the project so we didnt have any design conflicts. 
+In terms of AI use, I used AI to help me generate some test .rest files to help test the API endpints that we created. This made finding edge cases easier and removed the redundant steps of creating them.
+In terms of libraries I used express.js and Mongoose to create the API endpoints and database interactions. Lastly, I used MongoDB Atlas so we could have a cloud hosted database and I could view the collections/documents on a dashboard.
+
+  For me, this assignment was pretty straight forward. I have had a lot of experience working with express.js and creating API endpoints. I haven't used Mongoose in a long time so I had to reference the API docs to remember what methods to use to fetch
+and update documents. I did face a challenge with connecting to the MongoDB database initially, however, after chaning the network access permissions I fixed it.
