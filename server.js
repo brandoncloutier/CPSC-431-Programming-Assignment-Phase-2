@@ -23,6 +23,7 @@ app.get('/api/lists', async (req, res) => {
     const lists = await db.collection("lists").find({}).toArray()
     res.status(200).json(lists)
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: error.message })
   }
 })
@@ -44,6 +45,7 @@ app.post('/api/lists', async (req, res) => {
 
     res.status(201).json({ _id: result.insertedId, list: list })
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: error.message })
   }
 })
@@ -65,6 +67,7 @@ app.get('/api/lists/:id', async (req, res) => {
 
     return res.status(200).json(list)
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: error.message })
   }
 })
@@ -84,6 +87,7 @@ app.delete('/api/lists/:id', async (req, res) => {
 
     res.status(200).json({ success: true })
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: error.message })
   }
 })
@@ -115,6 +119,7 @@ app.post('/api/lists/:id/entries', async (req, res) => {
 
     res.status(201).json(updatedList)
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: error.message })
   }
 })
@@ -144,6 +149,7 @@ app.patch('/api/lists/:id/entries/:entryId', async (req, res) => {
 
     res.status(200).json(updatedList)
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: error.message })
   }
 })
@@ -169,6 +175,7 @@ app.delete('/api/lists/:id/entries/:entryId', async (req, res) => {
 
     res.status(200).json(updatedList)
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: error.message })
   }
 })
@@ -185,5 +192,6 @@ const start = async () => {
 try {
   start()
 } catch (error) {
+  console.log(error)
   console.error('Failed to start server:', error);
 }

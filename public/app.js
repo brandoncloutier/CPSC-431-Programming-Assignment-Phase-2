@@ -29,8 +29,8 @@ async function createList() {
 
     await fetch("/api/lists", {
         method: "POST",
-        header: {
-            "Content-Type" : "application/json"
+        headers: {
+            "Content-Type": "application/json"
         },
         body: JSON.stringify({
             title
@@ -38,7 +38,7 @@ async function createList() {
     })
 
     //once user is done typing put it back to empty
-    input.value = " "
+    input.value = ""
     fetchAllLists()
 }
 
