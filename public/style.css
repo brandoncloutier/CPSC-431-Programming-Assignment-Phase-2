@@ -82,6 +82,7 @@ h2 {
     margin-bottom: 15px;
     font-size: 1.5rem;
 }
+/*will edit the frame of the list the user picked*/
 #listdetail {
     display: none;
     max-width: 600px;
@@ -91,6 +92,7 @@ h2 {
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
+/*this edits the entries of the lists*/
 #entriescontainer {
     padding: 12px 15px;
     border-bottom: 1px solid #e0e0e0;
@@ -98,4 +100,19 @@ h2 {
 }
 #entriescontainer div:last-child {
     border-bottom: none;
+}
+
+/*this is for the delete button*/
+.deletebutton {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 12px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    float: right;
+}
+.deletebutton:hover {
+    background-color: #b71c1c;
 }

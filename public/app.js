@@ -13,8 +13,20 @@ async function fetchAllLists() {
     lists.forEach(list => {
         const div = document.createElement("div")
         div.textContent = list.title
+
+        //delete button
+        const deleteButton = document.createElement("button")
+        deleteButton.textContent = "Delete"
+        deleteButton.classList.add("deletebutton")
+        deleteButton.onclick = (event) => {
+            event.stopPropagation()
+            //call function and pass in the parameter
+            deleteList(list._id)
+        }
         //pass in to the func parameter if user clicks on a certain list 
-        div.onclick = () => fetchById(list._id.toString())
+        div.onclick = () => fetchById(list._id)
+
+        div.appendChild(deleteButton)
         container.appendChild(div)
     })
 }
@@ -49,8 +61,7 @@ async function createList() {
 //postcondition: returns a single list
 async function fetchById(id) {
     //TEST: if clicked should show
-    console.log("clicked list id:",id)
-
+    console.log("fetching list id:",id)
 
     //call the lists to only get the Id
     const response = await fetch(`/api/lists/${id}`)
@@ -69,6 +80,22 @@ async function fetchById(id) {
     })
 
     document.getElementById("listdetail").style.display = "block"
+}
+
+//precondition: takes in parameter to retrieve list they want to delete
+//postcondition: returns success
+async function deleteList(id) {
+     //TEST: if clicked should show
+    console.log("deleted list id:",id)
+
+    //call the lists to only get the Id and then the HTTP method delete
+    await fetch(`/api/lists/${id}`, {
+        method: "DELETE"
+    })
+
+    document.getElementById("listdetail").style.display = "none"
+    //refresh the lists
+    fetchAllLists()
 }
 
 document.getElementById("createlistbutton").addEventListener("click",createList)
