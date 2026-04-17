@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    padding: 40x 20px;
+}
+
+/*for the title*/
+h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/*this creates a list section*/
+.createsection {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+/*for the input of the box*/
+input[tpye="text"] {
+    padding: 10px 15px;
+    width: 300px;
+    border: 2px solid #1a73e8;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+}
+input[type="type"]:focus {
+    border-color: #0d47a1;
+}
+
+/*for the button how it will look*/
+button {
+    padding: 10px 20px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0d47a1;
+}
+
+/*this is for how the output of the list looks use # since its an id*/
+#listscontainer {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#listscontainer div {
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border-left: 5px solid #1a73e8;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    font-size: 1rem;
+    cursor: pointer;
+}
+#listscontainer div:hover{
+    background-color: #e8f0fe;
+}

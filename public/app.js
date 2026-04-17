@@ -9,6 +9,7 @@ async function fetchAllLists() {
     const container = document.getElementById("listscontainer")
     container.innerHTML = " "
 
+    //add the data to the listcontainer
     lists.forEach(list => {
         const div = document.createElement("div")
         div.textContent = list.title
