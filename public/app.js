@@ -120,7 +120,7 @@ async function fetchById(id) {
 //precondition: takes in parameter to retrieve list they want to delete
 //postcondition: returns success
 async function deleteList(id) {
-     //TEST: if clicked should show
+    //TEST: if clicked should show
     console.log("deleted list id:",id)
 
     //call the lists to only get the Id and then the HTTP method delete
