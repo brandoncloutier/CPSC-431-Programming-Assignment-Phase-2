@@ -28,6 +28,22 @@ async function fetchAllLists() {
         }
         //pass in to the func parameter if user clicks on a certain list 
         div.onclick = () => fetchById(list._id)
+        div.onclick = () => {
+            const detail = document.getElementById("listdetail")
+
+
+            if(selectedListId == list._id){
+                detail.style.display = "none"
+                selectedListId = null
+            }
+            else {
+                document.querySelectorAll("#listcontainer div").forEach(d => {
+                    d.classList.remove("selected")
+                })
+                div.classList.add("selected")
+                fetchById(list._id)
+            }
+        }
 
         div.appendChild(deleteButton)
         container.appendChild(div)
@@ -42,7 +58,7 @@ async function createList() {
 
     //if user enters nothing then error
     if(!title) {
-        return alert("Please enter a title")
+        return alert("Please enter a title...")
     }
 
     await fetch("/api/lists", {
@@ -138,7 +154,7 @@ async function deleteList(id) {
 async function addEntry() {
     //TEST: if no entry selected then error
     if(!selectedListId){
-        return alert("Please select a list first")
+        return alert("Please select a list first...")
     }
 
     const input = document.getElementById("entryinput")
@@ -146,7 +162,7 @@ async function addEntry() {
 
     //if they enter an empty text then error
     if(!text){
-        return alert("Please enter an entry")
+        return alert("Please enter an entry...")
     }
 
     //call entries from the Db
@@ -170,7 +186,7 @@ async function addEntry() {
 async function updateStatus(entryId, currentStatus) {
     //TEST: if no entry selected then error
     if(!selectedListId){
-        return alert("Please select a list first")
+        return alert("Please select a list first...")
     }
     //calling the lists --> entries Id
     await fetch(`/api/lists/${selectedListId}/entries/${entryId}`, {
