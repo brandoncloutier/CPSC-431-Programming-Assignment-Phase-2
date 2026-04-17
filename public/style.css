@@ -116,3 +116,21 @@ h2 {
 .deletebutton:hover {
     background-color: #b71c1c;
 }
+
+/*fixing the add entry button*/
+#addentryselection {
+    display: flex;
+    gap: 10px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+#entryinput {
+    flex: 1;
+    padding: 8px 12px;
+    border: 2px solid #1a73e8;
+    font-size: 0.95rem;
+    outline: none;
+}
+#entryinput:focus {
+    border-color: #0d47a1;
+}

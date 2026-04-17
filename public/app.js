@@ -1,4 +1,7 @@
 
+//variable to keep track of the selected list
+let selectedListId = null
+
 //precondition: call the route first
 //postcondition: returns all the list the user fetches
 async function fetchAllLists() {
@@ -66,6 +69,8 @@ async function fetchById(id) {
     //call the lists to only get the Id
     const response = await fetch(`/api/lists/${id}`)
     const list = await response.json()
+    //call selectedbyid here to pass in the function addEntry
+    selectedListId = id
 
     //call the title from the Id
     document.getElementById("selectedlisttitle").textContent = list.title
@@ -98,5 +103,38 @@ async function deleteList(id) {
     fetchAllLists()
 }
 
+//precondition: selectedListId will be used here 
+//postcondition: returns the selectedListId information
+async function addEntry() {
+    //if no entry selected then error
+    if(!selectedListId){
+        return alert("Please select a list first")
+    }
+
+    const input = document.getElementById("entryinput")
+    const text = input.value.trim()
+
+    //if they enter an empty text then error
+    if(!text){
+        return alert("Please enter an entry")
+    }
+
+    await fetch(`/api/lists/${selectedListId}/entries`, {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify({
+            text
+        })
+    })
+
+    //reset the input to be empty and call the fetchbyid function to get information for only that Id
+    input.value = ""
+    fetchById(selectedListId)
+}
+
+//whenever these are called, you are now activating the functions
 document.getElementById("createlistbutton").addEventListener("click",createList)
+document.getElementById("addentrybutton").addEventListener("click",addEntry)
 fetchAllLists()
