@@ -146,7 +146,6 @@ h2 {
 #entriescontainer div:last-child {
     border-bottom: none;
 }
-
 .entrytext{
     font-size: 1rem;
     color: #333;
@@ -156,4 +155,20 @@ h2 {
     height: 18px;
     cursor: pointer;
     accent-color: #1a73e8;
+}
+
+
+/*this edits the delte by entry button to go right*/
+.deleteentrybutton {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+.deleteentrybutton:hover {
+    background-color: #b71c1c;
 }

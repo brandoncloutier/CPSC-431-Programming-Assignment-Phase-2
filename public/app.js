@@ -81,7 +81,7 @@ async function fetchById(id) {
     list.entries.forEach(entry => {
         const div = document.createElement("div")
 
-        //status information
+        //status information check (true or false)
         const checkbox = document.createElement("input")
         checkbox.type = "checkbox"
         checkbox.checked = entry.status
@@ -98,9 +98,18 @@ async function fetchById(id) {
             text.style.color = "#aaa"
         }
 
+        //delete button per entry
+        const deleteEntryButton = document.createElement("button")
+        deleteEntryButton.textContent = "Delete"
+        deleteEntryButton.classList.add("deleteentrybutton")
+        //calls the function to delete the specific entry id
+        deleteEntryButton.onclick = () => deleteEntry(entry.id)
+
+
         //div will have two child
         div.appendChild(checkbox)
         div.appendChild(text)
+        div.appendChild(deleteEntryButton)
 
         entriesContainer.appendChild(div)
     })
@@ -177,6 +186,20 @@ async function updateStatus(entryId, currentStatus) {
     fetchById(selectedListId)
 }
 
+//precondition: takes in one parameter to check for the entry id only
+//postcondition: returns the success deletion and the updated entry lists
+async function deleteEntry(entryId) {
+     //TEST: if clicked should show
+    console.log("deleted list id:",entryId)
+
+    //call the lists to only get the Id and then the HTTP method delete
+    await fetch(`/api/lists/${selectedListId}/entries/${entryId}`, {
+        method: "DELETE"
+    })
+
+    //call the fetchbyid function to show only the entries of that list
+    fetchById(selectedListId)
+}
 //whenever these are called, you are now activating the functions
 document.getElementById("createlistbutton").addEventListener("click",createList)
 document.getElementById("addentrybutton").addEventListener("click",addEntry)
