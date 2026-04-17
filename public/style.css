@@ -134,3 +134,26 @@ h2 {
 #entryinput:focus {
     border-color: #0d47a1;
 }
+
+/*this is for formatting the check status*/
+#entriescontainer div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+#entriescontainer div:last-child {
+    border-bottom: none;
+}
+
+.entrytext{
+    font-size: 1rem;
+    color: #333;
+}
+.entrycheckbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #1a73e8;
+}
