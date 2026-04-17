@@ -19,7 +19,7 @@ h1 {
     font-size: 2rem;
 }
 
-/*this creates a list section*/
+/*for how the input box will look*/
 .createsection {
     display: flex;
     justify-content: center;
