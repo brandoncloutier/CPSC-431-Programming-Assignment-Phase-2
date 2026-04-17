@@ -75,3 +75,27 @@ button:hover {
 #listscontainer div:hover{
     background-color: #e8f0fe;
 }
+
+/*this is for when user clicks on a single list*/
+h2 {
+    color: #1a73e8;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+#listdetail {
+    display: none;
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+#entriescontainer {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1rem;
+}
+#entriescontainer div:last-child {
+    border-bottom: none;
+}
