@@ -1,0 +1,18 @@
+Christian Hernandez
+885428292
+Professor Steven Cooper
+April 17, 2026
+
+ For this project, my responsibility was to implement the client-side logic and user interface of the application.
+My partner Brandon handled the server and database, while I focused on building the frontend that consumed his API routes.
+We decided to split the work this way during phase 1 when we planned out the system desing together.
+
+ For this project I used Visual Studio Code to write and edit my code, and Github to collaborate with my partner
+and pull his backend changes. In terms of AI use, I also used AI to help me organize and structure the CSS styling of the 
+user interface since laying out components cleanly was something I wanted guidance on.
+
+ One of the main challengees I faced was setting up Node.js on my Raspberry Pi 5, since there were conflicting packages
+that prevented it from installing correctly at first and it was also my first time using Node.js on my Raspberry Pi 5.
+Other than that, the assignment was straight forward as I was able to integrate the client with the server communicating through
+HTTP methods since I have experience with backend but it was a bit challenging since it was in a different program language
+as I'm used to C# as my backend. Overall, I enjoyed this assignment and Brandon did a great job setting up the server and database.
